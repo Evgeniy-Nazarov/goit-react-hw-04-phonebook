@@ -29,7 +29,7 @@ export const ContactItem = styled.li`
         padding: 5px;
         border-radius: 5px;
         border: none;
-       background-color: #000;
+    background-color: #000;
     color: #fff;
     font-size: 14px;
     cursor: pointer;

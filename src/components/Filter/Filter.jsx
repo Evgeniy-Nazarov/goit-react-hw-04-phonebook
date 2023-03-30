@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FilterContainer } from './Filter.styled';
 
 
-export const Filter = ( { changeFilter, value  }) => {
-    
+export const Filter = ( { changeFilter, value  }) => {    
     return (
         <>
             <FilterContainer>
@@ -14,6 +14,12 @@ export const Filter = ( { changeFilter, value  }) => {
         </>
     )
 }
+
+Filter.propTypes = {
+    changeFilter: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
+}
+
     
 
 

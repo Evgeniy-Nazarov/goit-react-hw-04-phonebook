@@ -1,9 +1,7 @@
 import { Form, Formik, Field, ErrorMessage } from "formik";
 import * as Yup from 'yup'
+import PropTypes from 'prop-types';
 import { FormButton, FormLabel, FormSpan } from "./ContactForm.styled";
-
-
-
 
 const initialValues = {
     name: '',
@@ -15,15 +13,11 @@ const validationSchema = Yup.object({
     number: Yup.number().required(),
 })
 
-
 export const ContactForm = ({onSubmit}) => { 
-
     const handleSubmit = (values, { resetForm }) => { 
         onSubmit(values);
         resetForm();
-
-    }
-        
+    }        
     
     return (
         <Formik
@@ -46,6 +40,12 @@ required />
         </Formik>
     )
 }
+
+ContactForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+}
+
+
 
 
 

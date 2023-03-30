@@ -23,13 +23,9 @@ export class App extends Component {
 
   filteredContacts = () => { 
     const { filter, contacts } = this.state;
-
     const filterNormalize = filter.toLowerCase();
-
     return contacts.filter(contact => contact.name.toLowerCase().includes(filterNormalize))
-
   }
-
 
   addContact = ({ name, number }) => { 
     const check = this.checkName(name)
@@ -38,11 +34,9 @@ export class App extends Component {
         id: nanoid(),
         name,
         number
-      };
-      
+      };      
     this.setState(prevState => ({contacts: [contact, ...prevState.contacts ],}))
       return;
-
     }
     alert(`${name} is already in contacts`)    
   }
@@ -55,10 +49,7 @@ export class App extends Component {
   onDelete = id => { 
     this.setState(prevState => ({contacts: prevState.contacts.filter(contact => contact.id !== id)}))
 }
-
-
   render() {
-
     const visibleContscts = this.filteredContacts();
     return (
       <PhoneBook>
@@ -71,3 +62,5 @@ export class App extends Component {
     );
   }
 };
+
+
