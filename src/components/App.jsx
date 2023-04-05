@@ -49,6 +49,20 @@ export class App extends Component {
   onDelete = id => { 
     this.setState(prevState => ({contacts: prevState.contacts.filter(contact => contact.id !== id)}))
 }
+componentDidMount () {
+  const contacts = localStorage.getItem('contacts');
+  const parsedContactList = JSON.parse(contacts);
+  this.setState({contacts: parsedContactList});
+  
+}
+
+componentDidUpdate (prevProps, prevState) {
+  
+  if (this.state.contacts !== prevState.contacts ) {
+    console.log ('update')
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
+  }
+}
   render() {
     const visibleContscts = this.filteredContacts();
     return (
