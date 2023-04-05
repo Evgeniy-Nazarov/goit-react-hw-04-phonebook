@@ -55,9 +55,7 @@ componentDidMount () {
   if (parsedContactList) {
     this.setState({contacts: parsedContactList});
   }
-  
-  
-}
+  }
 
 componentDidUpdate (prevProps, prevState) {
   
